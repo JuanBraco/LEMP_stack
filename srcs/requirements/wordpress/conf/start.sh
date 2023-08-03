@@ -18,13 +18,11 @@ wp core install  --allow-root \
 
 wp user create $WP_USR $WP_EMAIL \
         --role=author \
-        --user_pass=$WP_PWD \
+        --user_pass=$WP__USR_PWD \
         --allow-root
 
 sed -i 's/listen = \/run\/php\/php7.3-fpm.sock/listen = 9000/g' /etc/php/7.3/fpm/pool.d/www.conf
 
 mkdir /run/php
-
-wp redis enable --allow-root
 
 /usr/sbin/php-fpm7.3 -F

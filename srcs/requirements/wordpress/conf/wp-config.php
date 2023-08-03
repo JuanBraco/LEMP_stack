@@ -53,14 +53,14 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'mettez une phrase unique ici' );
-define( 'SECURE_AUTH_KEY',  'mettez une phrase unique ici' );
-define( 'LOGGED_IN_KEY',    'mettez une phrase unique ici' );
-define( 'NONCE_KEY',        'mettez une phrase unique ici' );
-define( 'AUTH_SALT',        'mettez une phrase unique ici' );
-define( 'SECURE_AUTH_SALT', 'mettez une phrase unique ici' );
-define( 'LOGGED_IN_SALT',   'mettez une phrase unique ici' );
-define( 'NONCE_SALT',       'mettez une phrase unique ici' );
+define('AUTH_KEY',         'K0fwFC~;&Jz_k {SFJoizoK)TDadyio!x+Anvh;_~3#4A%sg1{Bw`V@j>mAR6hg2');
+define('SECURE_AUTH_KEY',  'Ask6lh2;xcmIM_|qkgH|A3D/oxJ.-plpO+As)%E&n]emON9}SRH31@ywc&_UW-A+');
+define('LOGGED_IN_KEY',    'sarrduGo6lNb/&0BMS|J^>(F,#Bm-e|zLz+Cb@BVw$yPNq$T1w3iVt+*$KeJDLk=');
+define('NONCE_KEY',        ';[]{~v:HHqqu`2%5USUSqwW7xN!m^Y!)+1]r|s^598r:QD3eQ+wo4SJfHd=2}l{N');
+define('AUTH_SALT',        'U~an8AVi?-n<FYA`>90Ur84RSC>B+-5Iib!fb6fJ^1x/(R(oq#|G[vUlKM[*;8,&');
+define('SECURE_AUTH_SALT', '9Y,<@dB6x#+m+lKoK?T8;)?,1!RVcoL-:l8cMCJa</#it,5U;]zL :tO qbwMl8(');
+define('LOGGED_IN_SALT',   '(BAq:Us-.517.M2+AL!|+LfAJ:#qqd*bz.4<Q_r([z=#ex]G}|A<?0j8~~G%BEAU');
+define('NONCE_SALT',       'dk>X4t*Rp2E{fW-a$]1FngAN+4 ~yi$+/]XkIDV/HexP]YsFPHc$YHyF.gMdP_u<');
 /**#@-*/
 
 /**
@@ -96,3 +96,4 @@ if ( ! defined( 'ABSPATH' ) )
 
 /** Réglage des variables de WordPress et de ses fichiers inclus. */
 require_once( ABSPATH . 'wp-settings.php' );
+?>
