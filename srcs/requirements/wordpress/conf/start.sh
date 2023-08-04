@@ -17,7 +17,7 @@ cd /var/www/wordpress
 
 wp core download --allow-root
 
-#mv /var/www/wp-config.php /var/www/wordpress/
+mv /var/www/wp-config.php /var/www/wordpress/
 
 wp config create --allow-root \
         --dbname=$MYSQL_DATABASE \
