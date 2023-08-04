@@ -14,24 +14,24 @@ all: run
 
 run: 
 	@echo "$(GREEN)Building files for volumes ... $(RESET)"
-	@sudo mkdir -p /home/llescure/data/wordpress
-	@sudo mkdir -p /home/llescure/data/mysql
+	@sudo mkdir -p /home/jde-la-f/data/wordpress
+	@sudo mkdir -p /home/jde-la-f/data/mysql
 	@echo "$(GREEN)Building containers ... $(RESET)"
-	@docker-compose -f $(COMPOSE_FILE) up --build
+	@docker compose -f $(COMPOSE_FILE) up --build
 
 up:
 	@echo "$(GREEN)Building files for volumes ... $(RESET)"
-	@sudo mkdir -p /home/llescure/data/wordpress
-	@sudo mkdir -p /home/llescure/data/mysql
+	@sudo mkdir -p /home/jde-la-f/data/wordpress
+	@sudo mkdir -p /home/jde-la-f/data/mysql
 	@echo "$(GREEN)Building containers in background ... $(RESET)"
-	@docker-compose -f $(COMPOSE_FILE) up -d --build
+	@docker compose -f $(COMPOSE_FILE) up -d --build
 
 debug:
 	@echo "$(GREEN)Building files for volumes ... $(RESET)"
-	@sudo mkdir -p /home/llescure/data/wordpress
-	@sudo mkdir -p /home/llescure/data/mysql
+	@sudo mkdir -p /home/jde-la-f/data/wordpress
+	@sudo mkdir -p /home/jde-la-f/data/mysql
 	@echo "$(GREEN)Building containers with log information ... $(RESET)"
-	@docker-compose -f $(COMPOSE_FILE) --verbose up
+	@docker compose -f $(COMPOSE_FILE) --verbose up
 
 list:	
 	@echo "$(PURPLE)Listing all containers ... $(RESET)"
@@ -43,7 +43,7 @@ list_volumes:
 
 clean: 	
 	@echo "$(RED)Stopping containers ... $(RESET)"
-	@docker-compose -f $(COMPOSE_FILE) down
+	@docker compose -f $(COMPOSE_FILE) down
 	@-docker stop `docker ps -qa`
 	@-docker rm `docker ps -qa`
 	@echo "$(RED)Deleting all images ... $(RESET)"
@@ -53,8 +53,8 @@ clean:
 	@echo "$(RED)Deleting all network ... $(RESET)"
 	@-docker network rm `docker network ls -q`
 	@echo "$(RED)Deleting all data ... $(RESET)"
-	@sudo rm -rf /home/llescure/data/wordpress
-	@sudo rm -rf /home/llescure/data/mysql
+	@sudo rm -rf /home/jde-la-f/data/wordpress
+	@sudo rm -rf /home/jde-la-f/data/mysql
 	@echo "$(RED)Deleting all $(RESET)"
 
 .PHONY: run up debug list list_volumes clean
