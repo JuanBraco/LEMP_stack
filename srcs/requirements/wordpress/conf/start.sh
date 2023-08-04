@@ -6,7 +6,7 @@ chmod -R 775 /var/www/wordpress
 mkdir -p /run/php/
 touch /run/php/php7.3-fpm.pid
 
-if [ ! -f /var/www/wordpress/wp-config.php ]; then
+#if [ ! -f /var/www/wordpress/wp-config.php ]; then
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 chmod +x wp-cli.phar
 mv wp-cli.phar /usr/local/bin/wp
@@ -15,7 +15,9 @@ cd /var/www/wordpress
 
 wp core download --allow-root
 
-mv /var/www/wp-config.php /var/www/wordpress/
+rm /var/www/wordpress/wp-config.php
+
+cp /var/www/wp-config.php /var/www/wordpress/
 
 wp config create --allow-root \
         --dbname=$MYSQL_DATABASE \
@@ -36,6 +38,6 @@ wp user create $WP_USR $WP_EMAIL \
         --user_pass=$WP__USR_PWD \
         --allow-root
 
-fi
+#fi
 
 /usr/sbin/php-fpm7.3 -F
