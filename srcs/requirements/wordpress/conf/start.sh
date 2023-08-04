@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sleep 10
+
 chown -R www-data /var/www/wordpress
 chmod -R 775 /var/www/wordpress
 
