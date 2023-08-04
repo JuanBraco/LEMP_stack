@@ -13,11 +13,11 @@ curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.pha
 chmod +x wp-cli.phar
 mv wp-cli.phar /usr/local/bin/wp
 
-cd /var/www/wordpress
+#cd /var/www/wordpress
 
 wp core download --allow-root
 
-mv /var/www/wp-config.php /var/www/wordpress/
+#mv /var/www/wp-config.php /var/www/wordpress/
 
 wp config create --allow-root \
         --dbname=$MYSQL_DATABASE \
@@ -30,8 +30,7 @@ wp core install  --allow-root \
         --title=$WP_TITLE \
         --admin_user=$WP_ADMIN_USR \
         --admin_password=$WP_ADMIN_PWD \
-        --admin_email=$WP_ADMIN_EMAIL \
-        --skip-email
+        --admin_email=$WP_ADMIN_EMAIL
 
 wp user create $WP_USR $WP_EMAIL \
         --role=author \
