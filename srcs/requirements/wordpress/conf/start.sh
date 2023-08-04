@@ -1,5 +1,11 @@
 #!/bin/bash
 
+chown -R www-data /var/www/wordpress
+chmod -R 775 /var/www/wordpress
+
+mkdir -p /run/php/
+touch /run/php/php7.3-fpm.pid
+
 if [ ! -f /var/www/wordpress/wp-config.php ]; then
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 chmod +x wp-cli.phar
@@ -11,11 +17,11 @@ wp core download --allow-root
 
 mv /var/www/wp-config.php /var/www/wordpress/
 
-wp config create --allow-root \
-        --dbname=$MYSQL_DATABASE \
-        --dbuser=$MYSQL_USER \
-        --dbpass=$MYSQL_PASSWORD \
-        --dbhost=mariadb:3306
+#wp config create --allow-root \
+#        --dbname=$MYSQL_DATABASE \
+#        --dbuser=$MYSQL_USER \
+#        --dbpass=$MYSQL_PASSWORD \
+#        --dbhost=mariadb:3306
 
 wp core install  --allow-root \
         --url=$DOMAIN_NAME \
