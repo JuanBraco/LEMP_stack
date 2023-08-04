@@ -16,10 +16,12 @@ RUN		wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.p
 RUN		chmod +x wp-cli.phar
 RUN		mv wp-cli.phar /usr/local/bin/wp
 
+COPY	./conf/www.conf /etc/php/7.3/fpm/pool.d
 
-COPY	./conf/start.sh /
-COPY	./conf/wp-config.php /
+COPY	./conf /var/www/
 
-RUN		chmod +x /start.sh
+RUN		chmod +x /var/www/start.sh
 
-CMD		["/start.sh"]
+EXPOSE	9000
+
+CMD ["bash", "/var/www/start.sh"]
