@@ -33,7 +33,7 @@ wp core install  --allow-root \
 
 wp user create $WP_USR $WP_EMAIL \
         --role=author \
-        --user_pass=$WP__USR_PWD \
+        --user_pass=$WP_USR_PWD \
         --allow-root
 
 fi
