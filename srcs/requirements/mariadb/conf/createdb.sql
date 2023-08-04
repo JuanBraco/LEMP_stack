@@ -1,6 +1,6 @@
 CREATE DATABASE db_jb;
-CREATE USER 'jbraco'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';
-GRANT ALL PRIVILEGES ON $db_jb.* TO 'jbraco'@'%';
+CREATE USER 'jde-la-f'@'%' IDENTIFIED BY 'passwordUser';
+GRANT ALL PRIVILEGES ON db_jb.* TO 'jde-la-f'@'%';
 FLUSH PRIVILEGES;
 
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'passwordRoot';
