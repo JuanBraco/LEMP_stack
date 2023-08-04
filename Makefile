@@ -15,21 +15,21 @@ all: run
 run: 
 	@echo "$(GREEN)Building files for volumes ... $(RESET)"
 	@sudo mkdir -p /home/jde-la-f/data/wordpress
-	@sudo mkdir -p /home/jde-la-f/data/mysql
+	@sudo mkdir -p /home/jde-la-f/data/mariadb
 	@echo "$(GREEN)Building containers ... $(RESET)"
 	@docker compose -f $(COMPOSE_FILE) up --build
 
 up:
 	@echo "$(GREEN)Building files for volumes ... $(RESET)"
 	@sudo mkdir -p /home/jde-la-f/data/wordpress
-	@sudo mkdir -p /home/jde-la-f/data/mysql
+	@sudo mkdir -p /home/jde-la-f/data/mariadb
 	@echo "$(GREEN)Building containers in background ... $(RESET)"
 	@docker compose -f $(COMPOSE_FILE) up -d --build
 
 debug:
 	@echo "$(GREEN)Building files for volumes ... $(RESET)"
 	@sudo mkdir -p /home/jde-la-f/data/wordpress
-	@sudo mkdir -p /home/jde-la-f/data/mysql
+	@sudo mkdir -p /home/jde-la-f/data/mariadb
 	@echo "$(GREEN)Building containers with log information ... $(RESET)"
 	@docker compose -f $(COMPOSE_FILE) --verbose up
 
@@ -54,7 +54,7 @@ clean:
 	@-docker network rm `docker network ls -q`
 	@echo "$(RED)Deleting all data ... $(RESET)"
 	@sudo rm -rf /home/jde-la-f/data/wordpress
-	@sudo rm -rf /home/jde-la-f/data/mysql
+	@sudo rm -rf /home/jde-la-f/data/mariadb
 	@echo "$(RED)Deleting all $(RESET)"
 
 .PHONY: run up debug list list_volumes clean
